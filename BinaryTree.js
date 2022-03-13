@@ -43,23 +43,29 @@ class BinarySearchTree {
       }
     }
   }
-  findNode(value){
-      if(!this.root) return false
+  findNode(value) {
+    if (!this.root) return false
 
-      let currentNode=this.root;
-      let found=false;
+    let currentNode = this.root
+    let found = false
 
-      while(currentNode&&!found){
-          if(value<currentNode.value){
-              currentNode=currentNode.left
-          }else if(value>currentNode.value){
-              currentNode=currentNode.right
-          }else{
-              found=currentNode
-          }
+    while (currentNode && !found) {
+      if (value < currentNode.value) {
+        currentNode = currentNode.left
+      } else if (value > currentNode.value) {
+        currentNode = currentNode.right
+      } else {
+        found = currentNode
       }
-      if(!found) return undefined
-      return found
+    }
+    if (!found) return undefined
+    return found
+  }
+
+  inOrderTraversal(rootNode) {
+    if (rootNode.left) this.inOrderTraversal(rootNode.left)
+    console.log(rootNode.value)
+    if (rootNode.right) this.inOrderTraversal(rootNode.right)
   }
 }
 
@@ -68,6 +74,11 @@ const BST = new BinarySearchTree()
 BST.insertNode(11)
 BST.insertNode(9)
 BST.insertNode(10)
+BST.insertNode(15)
+BST.insertNode(16)
+BST.insertNode(17)
+BST.insertNode(18)
+BST.insertNode(19)
 BST.insertNode(20)
 BST.insertNode(21)
 BST.insertNode(22)
@@ -78,4 +89,4 @@ BST.insertNode(8)
 BST.insertNode(6)
 BST.insertNode(3)
 debugger
-console.log('Binary Search Tree', BST.findNode(8))
+console.log('Binary Search Tree', BST.inOrderTraversal(BST.root))
