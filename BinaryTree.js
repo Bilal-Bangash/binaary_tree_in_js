@@ -19,7 +19,7 @@ class BinarySearchTree {
 
   //   insert node
   insertNode(value) {
-      debugger
+    //   debugger
     let newNode = new Node(value)
     if (this.root === null) {
       this.root = newNode
@@ -43,6 +43,24 @@ class BinarySearchTree {
       }
     }
   }
+  findNode(value){
+      if(!this.root) return false
+
+      let currentNode=this.root;
+      let found=false;
+
+      while(currentNode&&!found){
+          if(value<currentNode.value){
+              currentNode=currentNode.left
+          }else if(value>currentNode.value){
+              currentNode=currentNode.right
+          }else{
+              found=currentNode
+          }
+      }
+      if(!found) return undefined
+      return found
+  }
 }
 
 const BST = new BinarySearchTree()
@@ -51,6 +69,13 @@ BST.insertNode(11)
 BST.insertNode(9)
 BST.insertNode(10)
 BST.insertNode(20)
+BST.insertNode(21)
+BST.insertNode(22)
+BST.insertNode(31)
+BST.insertNode(33)
+BST.insertNode(23)
 BST.insertNode(8)
-
-console.log('Binary Search Tree', BST)
+BST.insertNode(6)
+BST.insertNode(3)
+debugger
+console.log('Binary Search Tree', BST.findNode(8))
