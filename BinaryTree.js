@@ -67,6 +67,12 @@ class BinarySearchTree {
     console.log(rootNode.value)
     if (rootNode.right) this.inOrderTraversal(rootNode.right)
   }
+  
+  postOrderTraversal(rootNode) {
+    if (rootNode.left) this.inOrderTraversal(rootNode.left)
+    if (rootNode.right) this.inOrderTraversal(rootNode.right)
+    console.log(rootNode.value)
+  }
 }
 
 const BST = new BinarySearchTree()
@@ -89,4 +95,5 @@ BST.insertNode(8)
 BST.insertNode(6)
 BST.insertNode(3)
 debugger
-console.log('Binary Search Tree', BST.inOrderTraversal(BST.root))
+BST.inOrderTraversal(BST.root)
+BST.postOrderTraversal(BST.root)
