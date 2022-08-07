@@ -19,7 +19,6 @@ class BinarySearchTree {
 
   //   insert node
   insertNode(value) {
-    console.log(value)
     let newNode = new Node(value)
     if (this.root === null) {
       this.root = newNode
@@ -44,7 +43,6 @@ class BinarySearchTree {
     }
   }
   findNode(value) {
-    console.log(value)
     if (!this.root) return false
 
     let currentNode = this.root
