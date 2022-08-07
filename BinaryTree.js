@@ -42,6 +42,8 @@ class BinarySearchTree {
       }
     }
   }
+
+  // search node
   findNode(value) {
     if (!this.root) return false
 
@@ -61,6 +63,7 @@ class BinarySearchTree {
     return found
   }
 
+  // InOrder Traversal
   inOrderTraversal(rootNode) {
     if (rootNode.left) this.inOrderTraversal(rootNode.left)
     console.log(rootNode.value)
@@ -99,7 +102,6 @@ BST.insertNode(23)
 BST.insertNode(8)
 BST.insertNode(6)
 BST.insertNode(3)
-debugger
 console.log('InOrder')
 BST.inOrderTraversal(BST.root)
 console.log('PostOrder')
