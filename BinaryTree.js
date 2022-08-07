@@ -19,7 +19,6 @@ class BinarySearchTree {
 
   //   insert node
   insertNode(value) {
-    //   debugger
     console.log(value)
     let newNode = new Node(value)
     if (this.root === null) {
